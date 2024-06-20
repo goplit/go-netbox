@@ -47,12 +47,13 @@ func (v *DeviceStatusLabel) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := DeviceStatusLabel(value)
-	for _, existing := range AllowedDeviceStatusLabelEnumValues {
-		if existing == enumTypeValue {
-			*v = enumTypeValue
-			return nil
-		}
-	}
+	//for _, existing := range AllowedDeviceStatusLabelEnumValues {
+	//	if existing == enumTypeValue {
+	//		*v = enumTypeValue
+	//		return nil
+	//	}
+	//}
+	*v = enumTypeValue
 
 	return fmt.Errorf("%+v is not a valid DeviceStatusLabel", value)
 }
