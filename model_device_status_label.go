@@ -54,8 +54,8 @@ func (v *DeviceStatusLabel) UnmarshalJSON(src []byte) error {
 	//	}
 	//}
 	*v = enumTypeValue
-
-	return fmt.Errorf("%+v is not a valid DeviceStatusLabel", value)
+	return nil
+	// return fmt.Errorf("%+v is not a valid DeviceStatusLabel", value)
 }
 
 // NewDeviceStatusLabelFromValue returns a pointer to a valid DeviceStatusLabel
