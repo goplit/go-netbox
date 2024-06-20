@@ -1694,7 +1694,6 @@ func (o DeviceWithConfigContext) ToMap() (map[string]interface{}, error) {
 		toSerialize["name"] = o.Name.Get()
 	}
 	toSerialize["device_type"] = o.DeviceType
-	toSerialize["role"] = o.Role
 	toSerialize["device_role"] = o.DeviceRole
 	if o.Tenant.IsSet() {
 		toSerialize["tenant"] = o.Tenant.Get()
@@ -1779,16 +1778,6 @@ func (o DeviceWithConfigContext) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["console_port_count"] = o.ConsolePortCount
-	toSerialize["console_server_port_count"] = o.ConsoleServerPortCount
-	toSerialize["power_port_count"] = o.PowerPortCount
-	toSerialize["power_outlet_count"] = o.PowerOutletCount
-	toSerialize["interface_count"] = o.InterfaceCount
-	toSerialize["front_port_count"] = o.FrontPortCount
-	toSerialize["rear_port_count"] = o.RearPortCount
-	toSerialize["device_bay_count"] = o.DeviceBayCount
-	toSerialize["module_bay_count"] = o.ModuleBayCount
-	toSerialize["inventory_item_count"] = o.InventoryItemCount
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -1806,7 +1795,6 @@ func (o *DeviceWithConfigContext) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"display",
 		"device_type",
-		"role",
 		"device_role",
 		"site",
 		"parent_device",
@@ -1814,16 +1802,6 @@ func (o *DeviceWithConfigContext) UnmarshalJSON(data []byte) (err error) {
 		"config_context",
 		"created",
 		"last_updated",
-		"console_port_count",
-		"console_server_port_count",
-		"power_port_count",
-		"power_outlet_count",
-		"interface_count",
-		"front_port_count",
-		"rear_port_count",
-		"device_bay_count",
-		"module_bay_count",
-		"inventory_item_count",
 	}
 
 	allProperties := make(map[string]interface{})
